@@ -1,0 +1,23 @@
+.container {
+  margin: 0 auto;
+  max-width: 80rem;
+}
+
+.div {
+  background-color: var(--primary);
+  box-shadow: 0 0 1rem var(--primary-constrast-dark);
+  margin: 3rem 5rem;
+  padding: 3rem;
+  border-radius: 2rem;
+}
+
+.title {
+  font-weight: bolder;
+  font-size: 4rem;
+  color: var(--primary-dark);
+  text-align: center;
+}
+
+.text {
+  font-size: 2rem;
+}
