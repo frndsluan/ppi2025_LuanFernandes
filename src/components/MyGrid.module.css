@@ -42,19 +42,24 @@
 
 .header1 {
   grid-area: header1;
-  background-color: darkslateblue;
+  background-color: rgb(241, 5, 5);
 }
 
 .header2 {
   grid-area: header2;
-  background-color: deepskyblue;
+  background-color: rgb(15, 167, 218);
 }
 
-.aside {
+.aside1 {
   grid-area: aside;
   background-color: deeppink;
 
   
+}
+
+.aside2 {
+  grid-area: aside;
+  background-color: darkorange;
 }
 
 .footer {

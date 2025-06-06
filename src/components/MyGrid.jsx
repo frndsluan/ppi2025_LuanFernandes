@@ -2,10 +2,11 @@ import styles from "./MyGrid.module.css";
 
 export function MyGrid() {
   return (
-    <div className={styles.containe}>
+    <div className={styles.container}>
       <header className={styles.header1} />
       <header className={styles.header2} />
       <aside className={styles.aside} />
+      <aside className={styles.aside2} />
 
       <div className={styles.main}>
         <div className={styles.grid}>
