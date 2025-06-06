@@ -1,11 +1,14 @@
 .container {
   /* margin: 0 auto; */
-  min-width: 50rem;
+  height: 30rem;
+   @media (max-width: 768px) {
+   width: 80%;
+  }
 }
 
 .div {
   height: 20rem;
-  width: 30rem;
+ /* width: 30rem; */
   background-color: var(--primary);
   box-shadow: 0 0 1rem var(--primary-constrast-dark);
   /*  margin: 3rem 5rem; */
@@ -14,10 +17,15 @@
 }
 
 .title {
+  
   font-weight: bolder;
   font-size: 4rem;
   color: var(--primary-dark);
   text-align: center;
+
+   @media (max-width: 768px) {
+    font-size: 2rem;
+  }
 }
 
 .text {
