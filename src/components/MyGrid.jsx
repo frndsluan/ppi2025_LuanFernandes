@@ -3,12 +3,12 @@ import styles from "./MyGrid.module.css";
 export function MyGrid() {
   return (
     <div className={styles.container}>
-      <header className={styles.header1} />
-      <header className={styles.header2} />
-      <aside className={styles.aside} />
-      <aside className={styles.aside2} />
+      <header className={styles.header1}>Header</header>
+      <aside className={styles.asideLeft}>Aside</aside>
+      <header className={styles.header2}>Header</header>
+      <aside className={styles.asideRight}>Aside</aside>
 
-      <div className={styles.main}>
+      <main className={styles.main}>
         <div className={styles.grid}>
           <div className={styles.card}>
             <h2 className={styles.title}>Card 1</h2>
@@ -31,8 +31,10 @@ export function MyGrid() {
             <p className={styles.text}>This is the content of card 5.</p>
           </div>
         </div>
-      </div>
-      <footer className={styles.footer} />
+      </main>
+
+      <footer className={styles.footer1}>Footer</footer>
+      <footer className={styles.footer2}>Footer</footer>
     </div>
   );
 }

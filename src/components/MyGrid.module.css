@@ -1,68 +1,150 @@
-.grid {
-  padding: 3rem;
-  display: grid;
-  gap: 3rem;
-  grid-template-columns: repeat(30rem, 1fr);
-  grid-template-rows: repeat(auto-fit, min-content);
-}
-
-.card {
-  height: 30rem;
-  background-color: var(--primary-dark);
-  color: var(--primary-contrast-light);
-  padding: 1rem;
-  border-radius: 1rem;
-  box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.5);
-  font-size: 3rem;
-  text-align: center;
-}
-
 .container {
   display: grid;
-
   grid-template-areas:
-    "header1 header1"
-    "aside header2"
-    "aside main"
-    "footer footer";
+    "header1 header1 header1"
+    "asideLeft header2 asideRight"
+    "asideLeft main asideRight"
+    "asideLeft footer1 asideRight"
+    "footer2 footer2 asideRight";
 
-  grid-template-columns: 1fr 3fr;
-  grid-template-rows: 15rem 10rem auto 10rem;
-
-  @media (max-width: 1200px) {
-    grid-template-areas:
-    "header1 header1"
-    "aside header2"
-    "aside main"
-    "footer footer";
-
-    grid-template-columns: 1fr;
-  }
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 10rem 8rem auto 8rem 8rem;
+  min-height: 100vh;
 }
 
+
+
+/* Áreas principais */
 .header1 {
   grid-area: header1;
-  background-color: rgb(241, 5, 5);
+  background-color: #e41e26;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
 }
 
 .header2 {
   grid-area: header2;
-  background-color: rgb(15, 167, 218);
+  background-color: #00b0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
 }
 
-.aside1 {
-  grid-area: aside;
-  background-color: deeppink;
-
-  
+.main {
+  grid-area: main;
+  background-color: white;
+  padding: 2rem;
 }
 
-.aside2 {
-  grid-area: aside;
-  background-color: darkorange;
+.footer1 {
+  grid-area: footer1;
+  background-color: #28a745;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
 }
 
-.footer {
-  grid-area: footer;
-  background-color: darkslateblue;
+.footer2 {
+  grid-area: footer2;
+  background-color: pink;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.asideLeft {
+  grid-area: asideLeft;
+  background-color: yellow;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.asideRight {
+  grid-area: asideRight;
+  background-color: yellow;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* Grid de cards */
+.grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.card {
+  background-color: #343a40;
+  color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.text {
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+/* Responsivo: esconder aside direito abaixo de 1200px */
+@media (max-width: 1200px) {
+  .asideRight {
+    display: none;
+  }
+
+  .container {
+    grid-template-areas:
+      "header1 header1"
+      "asideLeft header2"
+      "asideLeft main"
+      "asideLeft footer1"
+      "footer2 footer2";
+    grid-template-columns: 1fr 3fr;
+  }
+}
+
+/* Responsivo: esconder header2, footer2 e todos asides abaixo de 768px */
+@media (max-width: 768px) {
+  .asideLeft,
+  .asideRight,
+  .header2,
+  .footer2 {
+    display: none;
+  }
+
+  .container {
+    grid-template-areas:
+      "header1"
+      "main"
+      "footer1";
+    grid-template-columns: 1fr;
+    grid-template-rows: 10rem auto 8rem;
+  }
 }
