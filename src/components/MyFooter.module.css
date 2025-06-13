@@ -1,0 +1,47 @@
+.footer {
+  background-color: white;
+  color: #0d1b2a; 
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 1.4rem;
+  gap: 1.5rem;
+}
+
+
+.left, .center, .right {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.right {
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.center {
+  flex: 1;
+  text-align: center;
+}
+
+.italic {
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .left, .center, .right {
+    align-items: center;
+  }
+
+  .right {
+    justify-content: center;
+  }
+}

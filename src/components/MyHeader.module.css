@@ -1,0 +1,23 @@
+.header {
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fraseContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.fraseContainer img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.title {
+  font-size: 2.4rem;
+  color: white;
+}
