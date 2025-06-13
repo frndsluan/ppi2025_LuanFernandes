@@ -1,7 +1,7 @@
 import styles from "./MyMain.module.css";
 
 const cards = Array.from({ length: 5 }, (_, i) => ({
-  id: i + 1, // começa em 1
+  id: i + 1,
   image: `https://picsum.photos/300/200?random=${i + 1}`,
   title: `My Text ${i}`,
 }));

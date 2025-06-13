@@ -5,7 +5,7 @@ export default function MyHeader() {
     <header className={styles.header}>
       <div className={styles.fraseContainer}>
         <img src="/Tomate azul.png" alt="Tomate azul" />
-        <h1 className={styles.title}>Foco, Força, Fé</h1>
+        <h1 className={styles.title}>Foco, Força e Fé</h1>
       </div>
     </header>
   );
