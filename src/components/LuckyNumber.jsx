@@ -26,12 +26,29 @@ export function LuckyNumber() {
       ) : (
         <h1>Lucky Number 🎲</h1>
       )}
-      <button className={styles.button} onClick={handleClick}>
-        Clique!
-      </button>
+
+      <div className={styles.buttons}>
+        <button className={styles.button} onClick={handleClick}>
+          Clique!
+        </button>
+
+        <button
+          className={styles.button}
+          onClick={() => {
+            setLuckyNumber(0);
+            setSaveNumber([]);
+            setMessage("");
+          }}
+        >
+          RESET 🔄
+        </button>
+      </div>
+
       <div style={{ marginTop: "2rem", textAlign: "center" }}>
         <strong>Números sorteados:</strong>
-        <div>{saveNumber.join(", ")}</div>
+        <div style={{ whiteSpace: "normal", wordBreak: "break-word" }}>
+          [{saveNumber.toString()}]
+        </div>
       </div>
       <p>{message}</p>
     </div>
