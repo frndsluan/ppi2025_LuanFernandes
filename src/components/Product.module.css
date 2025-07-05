@@ -1,0 +1,45 @@
+.productCard {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1.5rem;
+  max-width: 300px;
+  text-align: center;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.productImage {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.productTitle {
+  font-size: 1.2rem;
+  margin: 1rem 0 0.5rem;
+}
+
+.productDescription {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.productPrice {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 0.8rem 0;
+  color: #006400;
+}
+
+.addButton {
+  background-color: #008cba;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.addButton:hover {
+  background-color: #005f80;
+}

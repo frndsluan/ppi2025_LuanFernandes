@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import styles from "./ProductList.module.css";
+import { Product } from "./Product";
 import { CircularProgress } from "@mui/material";
 
 export function ProductList() {
@@ -18,7 +19,7 @@ export function ProductList() {
         const data = await response.json();
         setProducts(data.products);
       } catch (error) {
-        setError(error.message); // Pegando a mensagem do erro
+        setError(error.message);
       } finally {
         setLoading(false);
       }
@@ -31,16 +32,13 @@ export function ProductList() {
     <div className={styles.container}>
       <h1>TJA Megastore 🛒</h1>
       {products.map((product) => (
-        <div key={product.id} className={styles.productCard}>
-          <img
-            src={product.thumbnail}
-            alt={product.title}
-            className={styles.productImage}
-          />
-          <h2 className={styles.productTitle}>{product.title}</h2>
-          <p className={styles.productDescription}>{product.description}</p>
-          <p className={styles.productPrice}>${product.price}</p>
-        </div>
+        <Product
+          key={product.id}
+          thumbnail={product.thumbnail}
+          title={product.title}
+          description={product.description}
+          price={product.price}
+        />
       ))}
       {loading && (
         <div>
@@ -52,7 +50,7 @@ export function ProductList() {
           <p>Loading products...</p>
         </div>
       )}
-      {error && <p>Error loading products: {erro.message} ❌</p>}
+      {error && <p>Error loading products: {error} ❌</p>}
     </div>
   );
 }
