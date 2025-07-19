@@ -1,23 +1,39 @@
-.header {
-  padding: 2rem;
+.container {
   display: flex;
   align-items: center;
-  justify-content: center;
-}
-
-.fraseContainer {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.fraseContainer img {
-  width: 60px;
+  justify-content: space-between;
+  gap: 3rem;
+  padding: 1rem 2rem;
+  background-color: var(--primary-dark);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   height: 60px;
-  object-fit: contain;
 }
 
-.title {
-  font-size: 2.4rem;
-  color: white;
+.container h1 {
+  font-size: 2rem;
+  font-weight: bolder;
+  color: #ff6347; 
+}
+
+.cartInfo {
+  border-radius: 0.8rem;
+  background-color: var(--primary-light);
+  color: var(--primary-contrast-dark);
+  padding: 0.7rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.link {
+  text-decoration: none;
+  color: var(--primary);
 }

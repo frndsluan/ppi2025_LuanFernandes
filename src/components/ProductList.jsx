@@ -1,12 +1,12 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import styles from "./ProductList.module.css";
-import { Product } from "./Product";
 import { CircularProgress } from "@mui/material";
+import { Product } from "./Product";
 
-export function ProductList() {
+export function ProductList({ addToCart }) {
   var category = "smartphones";
   var limit = 10;
-  var apiUrl = `https://dummyjson.com/products/category/${category}?limit=${limit}&select=id,thumbnail,brand,title,price,description`;
+  var apiUrl = `https://dummyjson.com/products/category/${category}?limit=${limit}&select=id,thumbnail,title,price,description`;
 
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -19,7 +19,7 @@ export function ProductList() {
         const data = await response.json();
         setProducts(data.products);
       } catch (error) {
-        setError(error.message);
+        setError(error);
       } finally {
         setLoading(false);
       }
@@ -30,16 +30,11 @@ export function ProductList() {
 
   return (
     <div className={styles.container}>
-      <h1>TJA Megastore 🛒</h1>
-      {products.map((product) => (
-        <Product
-          key={product.id}
-          thumbnail={product.thumbnail}
-          title={product.title}
-          description={product.description}
-          price={product.price}
-        />
-      ))}
+      <div className={styles.productList}>
+        {products.map((product) => (
+          <Product key={product.id} product={product} addToCart={addToCart} />
+        ))}
+      </div>
       {loading && (
         <div>
           <CircularProgress
@@ -50,7 +45,7 @@ export function ProductList() {
           <p>Loading products...</p>
         </div>
       )}
-      {error && <p>Error loading products: {error} ❌</p>}
+      {error && <p>Error loading products: {error.message} ❌</p>}
     </div>
   );
 }
