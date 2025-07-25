@@ -1,38 +1,39 @@
-import { useEffect, useState } from "react";
 import styles from "./ProductList.module.css";
 import { CircularProgress } from "@mui/material";
 import { Product } from "./Product";
+import { useContext, useRef } from "react";
+import { CartContext } from "../service/CartContext";
 
-export function ProductList({ addToCart }) {
-  var category = "smartphones";
-  var limit = 10;
-  var apiUrl = `https://dummyjson.com/products/category/${category}?limit=${limit}&select=id,thumbnail,title,price,description`;
+export function ProductList() {
+  const { products, loading, error } = useContext(CartContext);
 
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const searchInput = useRef(null);
 
-  useEffect(() => {
-    async function fetchProducts() {
-      try {
-        const response = await fetch(apiUrl);
-        const data = await response.json();
-        setProducts(data.products);
-      } catch (error) {
-        setError(error);
-      } finally {
-        setLoading(false);
-      }
-    }
+  function handleSearch() {
+    const query = searchInput.current.value.toLowerCase();
+    console.log("Search query:", query);
+  }
 
-    fetchProducts();
-  }, []);
-
+  function handleClear() {
+    searchInput.current.value = "";
+  }
   return (
     <div className={styles.container}>
+      <div className={styles.searchContainer}>
+        <input
+          ref={searchInput}
+          type="text"
+          placeholder="Search products..."
+          className={styles.searchInput}
+          onChange={handleSearch}
+        />
+        <button className={styles.searchButton} onClick={handleClear}>
+          CLEAR
+        </button>
+      </div>
       <div className={styles.productList}>
         {products.map((product) => (
-          <Product key={product.id} product={product} addToCart={addToCart} />
+          <Product key={product.id} product={product} />
         ))}
       </div>
       {loading && (

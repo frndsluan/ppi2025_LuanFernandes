@@ -3,34 +3,36 @@
   align-items: center;
   justify-content: space-between;
   gap: 3rem;
-  padding: 1rem 2rem;
+  height: 15rem;
+  padding: 5rem;
   background-color: var(--primary-dark);
+
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  height: 60px;
 }
 
 .container h1 {
-  font-size: 2rem;
+  font-size: 5rem;
   font-weight: bolder;
-  color: #ff6347; 
+}
+
+.containerImg img {
+  height: auto;
+  width: 100%;
+  max-width: 20rem;
 }
 
 .cartInfo {
-  border-radius: 0.8rem;
+  border-radius: 3rem;
   background-color: var(--primary-light);
   color: var(--primary-contrast-dark);
-  padding: 0.7rem;
-  font-size: 1.2rem;
+  padding: 2rem;
+  font-size: 3rem;
   font-weight: bold;
   text-align: center;
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
 }
 
 .link {

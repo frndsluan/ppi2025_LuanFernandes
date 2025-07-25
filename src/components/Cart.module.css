@@ -1,200 +1,75 @@
-.cartContainer {
-  padding: 2rem;
-  color: #000;
-  background-color: #f5f5f5;
-  min-height: 100vh;
+.cart {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-  position: relative;
-  padding-top: 100px; 
+  gap: 5rem;
+  padding: 5rem;
+  margin: 15rem 0;
+  align-items: center;
 }
 
-.cartTitle {
-  font-size: 2.5rem; 
-  font-weight: bold; 
-  margin-top: 2rem; 
-  margin-bottom: 1.5rem;
-  color: #111;
-  text-align: center;
-  text-transform: uppercase; 
-  letter-spacing: 1px; 
+.cart h2 {
+  font-size: 4rem;
+  font-weight: bolder;
 }
 
-.removeAllBtn {
-  background-color: #dc2626;
-  color: white;
-  border: none;
-  padding: 0.6rem 1.2rem;
-  border-radius: 8px;
-  cursor: pointer;
-  margin-bottom: 1rem;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.cartItems {
-  display: grid;
-  gap: 1.2rem;
-  margin-bottom: 2rem;
-  width: 100%;
-  max-width: 800px;
+.cart p {
+  font-size: 2rem;
+  color: var(--primary-contrast-dark);
 }
 
 .cartItem {
-  background-color: white;
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-  padding: 0.8rem;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  gap: 5rem;
+  padding: 2rem 5rem;
+  margin: 2rem;
+  border-radius: 1rem;
+  background-color: var(--gray-100);
+  color: var(--primary-contrast-dark);
 }
 
-.itemImage {
-  width: 120px;
-  height: 120px;
-  object-fit: contain;
-  margin-right: 0.8rem;
+.cartItem img {
+  width: 20rem;
+  height: auto;
 }
 
-.itemDetails {
-  text-align: left;
+.cartItem h3 {
+  font-size: 2rem;
   flex-grow: 1;
 }
 
-.itemDetails h3 {
-  font-size: 1rem;
-  margin-bottom: 0.4rem;
+.cartItem p {
+  font-size: 2rem;
 }
 
-.itemDetails p {
-  margin: 0.2rem 0;
-  font-size: 0.9rem;
+.cartItem button {
+  padding: 1rem 2rem;
+  font-size: 3rem;
+  background-color: var(--primary);
+  color: #111;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
 }
 
-.quantityControl {
+.cartItem button:hover {
+  background-color: var(--primary-dark);
+}
+
+.cartItem button:disabled {
+  background-color: var(--primary-light);
+  cursor: not-allowed;
+}
+
+.quantityControls {
   display: flex;
   align-items: center;
-  margin: 0.4rem 0;
+  border: 0.25rem solid #111;
+  border-radius: 1rem;
 }
 
-.quantityControl button {
-  padding: 0.2rem 0.5rem;
-  font-size: 0.9rem;
-  background-color: #1d4ed8;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  margin: 0 0.3rem;
-  cursor: pointer;
-}
-
-.quantityControl span {
-  font-size: 0.9rem;
-  min-width: 20px;
-  text-align: center;
-}
-
-.removeBtn {
-  background-color: #ef4444;
-  color: white;
-  border: none;
-  padding: 0.4rem 0.8rem;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 0.4rem;
-  font-size: 0.9rem;
-}
-
-.summaryBox {
-  background-color: #f0f0f0;
-  padding: 1rem;
-  border-radius: 8px;
-  margin-bottom: 2rem;
-  width: 100%;
-  max-width: 800px;
-  text-align: center;
-}
-
-.summaryBox h3 {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-}
-
-.summaryBox p {
-  margin: 0.5rem 0;
-}
-
-.continueBtn {
-  background-color: #f97316;
-  color: white;
-  border: none;
-  padding: 0.6rem 1.2rem;
-  border-radius: 8px;
-  cursor: pointer;
-  width: 100%;
-  max-width: 200px;
-  margin-top: 1rem;
-  display: inline-block;
-}
-
-.backBtn {
-  background-color: #fff;
-  color: #000;
-  border: 1px solid #ccc;
-  padding: 0.6rem 1.2rem;
-  border-radius: 8px;
-  cursor: pointer;
-  width: 100%;
-  max-width: 200px;
-  margin-top: 0.5rem;
-  display: inline-block;
-}
-
-.services {
-  background-color: #f0f0f0;
-  padding: 1rem;
-  border-radius: 8px;
-  border: 2px solid #f97316;
-  margin-top: 2rem;
-  width: 100%;
-  max-width: 800px;
-  text-align: center;
-}
-
-.services h3 {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-  color: #f97316;
-}
-
-.serviceOptions {
-  margin-bottom: 1rem;
-}
-
-.serviceOptions label {
-  display: block;
-  margin: 0.5rem 0;
-  font-weight: bold;
-  color: #111;
-}
-
-.serviceOptions input {
-  margin-right: 0.5rem;
-}
-
-.serviceTotal {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #f97316;
-  margin-top: 1rem;
-}
-
-.emptyCart {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #666;
-  text-align: center;
+.quantityControls span {
+  font-size: 2rem;
+  margin: 0 2rem;
 }
