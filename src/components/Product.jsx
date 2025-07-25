@@ -1,7 +1,6 @@
 import styles from "./Product.module.css";
 import { useContext } from "react";
 import { CartContext } from "../service/CartContext";
-import { Link } from "react-router";
 
 export function Product({ product }) {
   const { addToCart } = useContext(CartContext);
