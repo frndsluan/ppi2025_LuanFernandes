@@ -26,7 +26,7 @@
   margin: 2rem;
   border-radius: 1rem;
   background-color: var(--gray-100);
-  color: var(--primary-contrast-dark);
+  color: black;
 }
 
 .cartItem img {
@@ -72,4 +72,18 @@
 .quantityControls span {
   font-size: 2rem;
   margin: 0 2rem;
+}
+
+.clearButton {
+  padding: 1rem 3rem;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 3rem;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.clearButton:hover {
+  background-color: #ff1a1a;
 }

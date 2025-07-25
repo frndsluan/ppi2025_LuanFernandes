@@ -1,22 +1,31 @@
 import styles from "./ProductList.module.css";
 import { CircularProgress } from "@mui/material";
 import { Product } from "./Product";
-import { useContext, useRef } from "react";
+import { useContext, useRef, useState, useEffect } from "react";
 import { CartContext } from "../service/CartContext";
 
 export function ProductList() {
   const { products, loading, error } = useContext(CartContext);
-
+  const [filteredProducts, setFilteredProducts] = useState([]);
   const searchInput = useRef(null);
+
+  useEffect(() => {
+    setFilteredProducts(products);
+  }, [products]);
 
   function handleSearch() {
     const query = searchInput.current.value.toLowerCase();
-    console.log("Search query:", query);
+    const filtered = products.filter((product) =>
+      product.title.toLowerCase().includes(query)
+    );
+    setFilteredProducts(filtered);
   }
 
   function handleClear() {
     searchInput.current.value = "";
+    setFilteredProducts(products);
   }
+
   return (
     <div className={styles.container}>
       <div className={styles.searchContainer}>
@@ -32,7 +41,7 @@ export function ProductList() {
         </button>
       </div>
       <div className={styles.productList}>
-        {products.map((product) => (
+        {filteredProducts.map((product) => (
           <Product key={product.id} product={product} />
         ))}
       </div>
@@ -47,6 +56,9 @@ export function ProductList() {
         </div>
       )}
       {error && <p>Error loading products: {error.message} ❌</p>}
+      {!loading && !error && filteredProducts.length === 0 && (
+        <p>No products found.</p>
+      )}
     </div>
   );
 }

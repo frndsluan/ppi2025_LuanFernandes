@@ -7,10 +7,43 @@
   gap: 2rem;
 }
 
+.searchContainer {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.searchInput {
+  padding: 1rem 2rem;
+  border-radius: 3rem;
+  border: 0.25rem solid #111;
+  font-size: 2rem;
+  width: 50rem;
+}
+
+.searchButton {
+  padding: 1rem 2rem;
+  border-radius: 3rem;
+  border: 0.25rem solid #111;
+  background-color: var(--primary);
+  color: #111;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
 .productList {
-  padding: 1rem 3rem;
+  padding: 1rem;
   display: grid;
-  gap: 3rem;
-  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
   grid-template-rows: repeat(auto-fit, min-content);
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .productList {
+    gap: 3rem;
+    padding: 1rem 3rem;
+  }
 }

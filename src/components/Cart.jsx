@@ -11,32 +11,38 @@ export function Cart() {
       {cart.length === 0 ? (
         <p>Your cart is empty.</p>
       ) : (
-        <ul>
-          {cart.map((product, index) => (
-            <li key={index} className={styles.cartItem}>
-              <img src={product.thumbnail} alt={product.title} />
-              <h3>{product.title}</h3>
-              <p>${product.price.toFixed(2)}</p>
-              <div className={styles.quantityControls}>
-                <button
-                  onClick={() =>
-                    updateQtyCart(product.id, product.quantity - 1)
-                  }
-                >
-                  -
-                </button>
-                <span>{product.quantity}</span>
-                <button
-                  onClick={() =>
-                    updateQtyCart(product.id, product.quantity + 1)
-                  }
-                >
-                  +
-                </button>
-              </div>
-            </li>
-          ))}
-        </ul>
+        <>
+          <ul>
+            {cart.map((product) => (
+              <li key={product.id} className={styles.cartItem}>
+                <img src={product.thumbnail} alt={product.title} />
+                <h3>{product.title}</h3>
+                <p>${product.price.toFixed(2)}</p>
+                <div className={styles.quantityControls}>
+                  <button
+                    onClick={() =>
+                      updateQtyCart(product.id, product.quantity - 1)
+                    }
+                    disabled={product.quantity <= 1}
+                  >
+                    -
+                  </button>
+                  <span>{product.quantity}</span>
+                  <button
+                    onClick={() =>
+                      updateQtyCart(product.id, product.quantity + 1)
+                    }
+                  >
+                    +
+                  </button>
+                </div>
+              </li>
+            ))}
+          </ul>
+          <button onClick={clearCart} className={styles.clearButton}>
+            Clear Cart
+          </button>
+        </>
       )}
     </div>
   );
