@@ -1,0 +1,72 @@
+.container {
+  padding: 5rem;
+  margin: 15rem 0;
+}
+
+.form {
+  max-width: 60rem;
+  margin: 0 auto;
+  background-color: var(--gray-100);
+  padding: 3rem;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.formGroup {
+  margin-bottom: 2rem;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  font-size: 1.6rem;
+}
+
+.formGroup input,
+.formGroup textarea {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.6rem;
+  border: 0.1rem solid #ddd;
+  border-radius: 0.5rem;
+}
+
+.imagePreview {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.imagePreview img {
+  max-width: 20rem;
+  max-height: 20rem;
+  border-radius: 0.5rem;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.saveButton {
+  flex: 1;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 1.2rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 1.6rem;
+}
+
+.cancelButton {
+  flex: 1;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 1.2rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 1.6rem;
+}

@@ -1,7 +1,7 @@
 import styles from "./ProductList.module.css";
 import { CircularProgress } from "@mui/material";
 import { Product } from "./Product";
-import { useContext, useRef, useState, useEffect } from "react";
+import { useState, useContext, useEffect, useRef } from "react";
 import { CartContext } from "../service/CartContext";
 
 export function ProductList() {
@@ -10,15 +10,19 @@ export function ProductList() {
   const searchInput = useRef(null);
 
   useEffect(() => {
-    setFilteredProducts(products);
+    if(products) {
+      setFilteredProducts(products);
+    }
   }, [products]);
 
   function handleSearch() {
     const query = searchInput.current.value.toLowerCase();
-    const filtered = products.filter((product) =>
-      product.title.toLowerCase().includes(query)
+    setFilteredProducts(
+      products.filter((product) =>
+        product.title.toLowerCase().includes(query) || 
+        product.description.toLowerCase().includes(query)
+      )
     );
-    setFilteredProducts(filtered);
   }
 
   function handleClear() {
@@ -56,8 +60,8 @@ export function ProductList() {
         </div>
       )}
       {error && <p>Error loading products: {error.message} ❌</p>}
-      {!loading && !error && filteredProducts.length === 0 && (
-        <p>No products found.</p>
+      {!loading && filteredProducts.length === 0 && (
+        <p>No products found</p>
       )}
     </div>
   );
