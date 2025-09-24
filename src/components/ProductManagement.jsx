@@ -1,7 +1,7 @@
 import styles from "./ProductManagement.module.css";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { CartContext } from "../service/CartContext";
+import { CartContext } from "../context/CartContext";
 
 export function ProductManagement() {
   const { products, deleteProduct } = useContext(CartContext);

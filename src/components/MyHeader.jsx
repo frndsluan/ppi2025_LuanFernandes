@@ -2,7 +2,7 @@ import styles from "./MyHeader.module.css";
 import { ShoppingBasket, User, PackagePlus, LogIn } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
-import { CartContext } from "../service/CartContext";
+import { CartContext } from "../context/CartContext";
 
 export function Header() {
   const { cart } = useContext(CartContext);

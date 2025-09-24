@@ -1,7 +1,7 @@
 import styles from "./ProductForm.module.css";
 import { useState, useEffect, useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { CartContext } from "../service/CartContext";
+import { CartContext } from "../context/CartContext";
 
 export function ProductForm() {
   const { id } = useParams();
