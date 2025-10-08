@@ -7,8 +7,10 @@ import { Cart } from "./components/Cart";
 import { CartProvider } from "./context/CartContext";
 import { Login } from "./components/Login";
 import { ToastContainer } from "react-toastify";
+import { User } from "./components/User";
 
 export default function App() {
+
   return (
     <>
       <ToastContainer />
@@ -17,8 +19,9 @@ export default function App() {
         <Routes>
           <Route path="/" element={<ProductList />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/login" element={<Login value="login" />} />
+          <Route path="/signin" element={<Login value="signin" />} />
           <Route path="/register" element={<Login value="register" />} />
+          <Route path="/user" element={<User />} />
         </Routes>
       </CartProvider>
     </>

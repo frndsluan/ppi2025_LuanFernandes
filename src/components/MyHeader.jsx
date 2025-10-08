@@ -1,39 +1,39 @@
 import styles from "./MyHeader.module.css";
-import { ShoppingBasket, User, PackagePlus, LogIn } from "lucide-react";
-import { Link } from "react-router-dom";
+import { ShoppingBasket } from "lucide-react";
+import { Link } from "react-router";
 import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
+import { ThemeToggle } from "./ThemeToggle";
 
 export function Header() {
-  const { cart } = useContext(CartContext);
+  const { cart, session } = useContext(CartContext);
 
   return (
     <div className={styles.container}>
-      <div className={styles.leftSection}>
-        <Link to="/" className={styles.logoLink}>
+      <div>
+        <Link to="/" className={styles.link}>
           <h1>TJA Megastore</h1>
         </Link>
+        {session && (
+          <Link to="/user" className={styles.welcomeMessage}>
+            Welcome, {session.user.user_metadata.username} {session.user.user_metadata.admin && '⭐'}
+          </Link>
+        )}
       </div>
 
-      <div className={styles.rightSection}>
-        <div className={styles.navButtons}>
-          <Link to="/login" className={styles.navButton}>
-            <LogIn size={24} />
-            <span>Login</span>
-          </Link>
-          
-          <Link to="/register" className={styles.navButton}>
-            <User size={24} />
-            <span>Register</span>
-          </Link>
-          
-          <Link to="/manage-products" className={styles.navButton}>
-            <PackagePlus size={24} />
-            <span>Products</span>
-          </Link>
-        </div>
-
-        <Link to="/cart" className={styles.cartLink}>
+      <div className={styles.actions}>
+        {!session && (
+          <>
+            <Link to="/signin" className={styles.link}>
+              Sign In
+            </Link>
+            <Link to="/register" className={styles.link}>
+              Register
+            </Link>
+          </>
+        )}
+        <ThemeToggle />
+        <Link to="/cart" className={styles.link}>
           <div className={styles.cartInfo}>
             <div className={styles.cartIcon}>
               <ShoppingBasket size={32} />
@@ -43,7 +43,8 @@ export function Header() {
                 </span>
               )}
             </div>
-            <p className={styles.cartTotal}>
+
+            <p>
               Total: ${" "}
               {cart
                 .reduce(
