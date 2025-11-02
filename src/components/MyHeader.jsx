@@ -1,12 +1,14 @@
 import styles from "./MyHeader.module.css";
 import { ShoppingBasket } from "lucide-react";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
 import { ThemeToggle } from "./ThemeToggle";
+import { SessionContext } from "../context/SessionContext";
 
 export function Header() {
-  const { cart, session } = useContext(CartContext);
+  const { cart } = useContext(CartContext);
+  const { session } = useContext(SessionContext);
 
   return (
     <div className={styles.container}>
@@ -16,7 +18,8 @@ export function Header() {
         </Link>
         {session && (
           <Link to="/user" className={styles.welcomeMessage}>
-            Welcome, {session.user.user_metadata.username} {session.user.user_metadata.admin && '⭐'}
+            Welcome, {session.user.user_metadata.username}{" "}
+            {session.user.user_metadata.admin && "⭐"}
           </Link>
         )}
       </div>

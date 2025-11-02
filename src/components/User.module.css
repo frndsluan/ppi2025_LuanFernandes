@@ -13,7 +13,7 @@
   margin-bottom: 1rem;
 }
 
-.userInfo{
+.userInfo {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -36,4 +36,55 @@
 
 .button:hover {
   background-color: var(--primary-dark);
+}
+
+.adminPanel {
+  margin-top: 3rem;
+  padding: 2rem;
+  background-color: var(--gray-100);
+  border-radius: 1rem;
+  width: 100%;
+  max-width: 60rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.form input {
+  padding: 1rem;
+  font-size: 1.5rem;
+  border: 0.2rem solid var(--primary);
+  border-radius: 0.5rem;
+}
+
+.form button {
+  padding: 1rem;
+  font-size: 1.5rem;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.productItem {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: var(--gray-200);
+  border-radius: 0.5rem;
+}
+
+.productItem button {
+  margin-right: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
 }
