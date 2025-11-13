@@ -24,3 +24,21 @@ Desenvolver uma aplicação web moderna, aplicando conceitos de **front-end**, *
 1. Clone o repositório:
    ```bash
    git clone https://github.com/frndsluan/ppi2025_LuanFernandes
+   ```
+2. Instale as dependências:
+   ```bash
+   npm install
+   ```
+3. Execute o projeto:
+   ```bash
+   npm run dev
+   ```
+
+## 🌐 Acesse no navegador
+http://localhost:3000/
+
+## 📚 Status
+✅ Projeto em andamento – versão com persistência via Supabase implementada.
+
+## 📜 Licença
+MIT – Uso educacional e acadêmico.
