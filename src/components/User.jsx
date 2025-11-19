@@ -56,6 +56,7 @@ export function User() {
       .eq("id", id);
     setEditingProduct(null);
     await refreshProducts();
+    await refreshCart();
     if (isAdmin) {
       await fetchAdminProducts();
     }

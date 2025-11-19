@@ -87,9 +87,6 @@ export function Login({ value }) {
 
   async function handleSubmit(e) {
     e.preventDefault();
-
-    // Basic validation
-    // TODO: Buscar por REGEXP
     const newErrors = {};
     if (!formValues.email) newErrors.email = "Email is required";
     if (!formValues.password) newErrors.password = "Password is required";
